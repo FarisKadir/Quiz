@@ -10,8 +10,32 @@
 </head>
 <body>
     <div class="container">
+        <div class="row">
+            <div class="col-lg-12 position-relative mt-5">
+                <p class="text-center h1">Faris's JavaScript Quiz</p>
+            </div> 
+        </div>
         <div class ="row">
-            <div class="column">row 1 col 1</div>
+            <div class="col-lg-9 position-relative mt-5">
+                <p class="h2 bg-info text-center">row 1 col 1</p>
+            </div>
+            <div class="col-lg-3 position-relative mt-5">
+                <div class="row">
+                    <p class="h2 bg-warning text-center">Current Stats</p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-left fw-bold mb-0">Correct:</p>
+                        <p class="text-left fw-bold mb-0">Incorrect:</p>
+                    </div>
+                    <div class="col">
+                        <p class="text-left fw-bold mb-0 mr-0" id="correct"></p>
+                        <p class="text-left fw-bold mb-0 mr-0 pl-0" id="incorrect"></p>
+                    </div>
+
+
+                </div>
+            </div>   
         </div>
     </div>
 
