@@ -3,43 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Loading reset.css -->
     <link href="reset.css">
+    <!-- Loading Bootstrap for responsive layout -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>Faris's Javascript Quiz!</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
         <div class="row">
-            <div class="col-lg-12 position-relative mt-5">
+            <div class="col-md-12 position-relative mt-5">
                 <p class="text-center h1">Faris's JavaScript Quiz</p>
             </div> 
         </div>
-        <div class ="row">
-            <div class="col-lg-9 position-relative mt-5">
-                <p class="h2 bg-info text-center">row 1 col 1</p>
+        <div class ="row" id="row1">
+            <div class="col-md-4 position-relative mt-5">
+                <p class="text-center"><a href="highscores.html">View High Scores</a></p>
             </div>
-            <div class="col-lg-3 position-relative mt-5">
-                <div class="row">
-                    <p class="h2 bg-warning text-center">Current Stats</p>
+            <div class="col-md-5 position-relative mt-5">
+                <p class=" bg-info text-center"></p>
+            </div>
+            <div class="col-md-3 position-relative ml-5 mt-5">
+                <div class="col-md-6 mt-0">
+                    <p class="text-center">Time:</p>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="text-left fw-bold mb-0">Correct:</p>
-                        <p class="text-left fw-bold mb-0">Incorrect:</p>
-                    </div>
-                    <div class="col">
-                        <p class="text-left fw-bold mb-0 mr-0" id="correct"></p>
-                        <p class="text-left fw-bold mb-0 mr-0 pl-0" id="incorrect"></p>
-                    </div>
-
-
+            </div>
+        </div>   
+        <div class ="row" id="row1">
+            <div class="col-md-4 position-relative">
+            </div>
+            <div class="col-md-4 position-relative">
+                <p class="h4 text-center fw-bold" id="quiztitle">Coding Quiz Challenge</p>
+                <!-- Text area for the questions and multi choice answers -->
+                <p class="mt-4 text-center" id="textarea">Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect answers will penalize your score time by ten seconds!</p>
+                <!-- Submit button -->
+                <div class="text-center">
+                    <button class="btn btn-primary" id="submitBtn">Submit</button>
                 </div>
-            </div>   
-        </div>
+            </div>
+        </div>   
     </div>
 
-
+<!-- Loading javascript file -->
 <script src="script.js"></script>
 </body>
 </html>
