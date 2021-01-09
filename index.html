@@ -17,7 +17,7 @@
                 <p class="text-center h1">Faris's JavaScript Quiz</p>
             </div> 
         </div>
-        <div class ="row" id="row1">
+        <div class ="row">
             <div class="col-md-4 position-relative mt-5">
                 <p class="text-center"><a href="highscores.html">View High Scores</a></p>
             </div>
@@ -26,17 +26,19 @@
             </div>
             <div class="col-md-3 position-relative ml-5 mt-5">
                 <div class="col-md-6 mt-0">
-                    <p class="text-center">Time:</p>
+                    <p class="text-center" id="timer">Time:</p>
                 </div>
             </div>
         </div>   
-        <div class ="row" id="row1">
+        <div class ="row">
             <div class="col-md-4 position-relative">
             </div>
             <div class="col-md-4 position-relative">
                 <p class="h4 text-center fw-bold" id="quiztitle">Coding Quiz Challenge</p>
+
                 <!-- Text area for the questions and multi choice answers -->
-                <p class="mt-4 text-center" id="textarea">Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect answers will penalize your score time by ten seconds!</p>
+                <p class="mt-4 text-center" id="textarea">Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect answers will penalize your score time by one second!</p>
+
                 <!-- Submit button -->
                 <div class="text-center">
                     <button class="btn btn-primary" id="submitBtn">Submit</button>
