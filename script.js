@@ -15,41 +15,36 @@ var questionsArr = [
         question: "What is DOM an abbreviation for?",
         answerOne: "Do Over Mondays",
         answerTwo: "Old Dominion Freight Line",
-        answerThree: "Document Object Model",
+        correct: "Document Object Model",
         answerFour: "All of the above",
-        correct: this.answerThree
     },
     {
         question: "Inside which HTML element do we put the JavaScript file name?",
         answerOne: "&lt;js&gt;",
         answerTwo: "&lt;javascript&gt;",
-        answerThree: "&lt;script&gt;",
+        correct: "&lt;script&gt;",
         answerFour: "&lt;scripting&gt;",
-        correct: this.answerThree
     },
     {
         question: "Where is the correct place to insert a JavaScript file name?",
         answerOne: "The &lt;head&gt; section",
-        answerTwo: "The &lt;body&gt; section",
+        correct: "The &lt;body&gt; section",
         answerThree: "Both the &lt;head&gt; section and the &lt;body&gt; section are correct",
         answerFour: "The &lt;title&gt; section",
-        correct: this.answerTwo
     },
     {
         question: "What is the correct syntax for referring to an external script called &quot;xxx.js&quot;?",
-        answerOne: "&lt;script src = &quot;xxx.js&quot;&gt;",
+        correct: "&lt;script src = &quot;xxx.js&quot;&gt;",
         answerTwo: "&lt;script href = &quot;xxx.js&quot;&gt;",
         answerThree: "&lt;script name = &quot;xxx.js&quot;&gt;",
         answerFour: "&lt;link script = &quot;xxx.js&quot;&gt;",
-        correct: this.answerOne
     },
     {
         question: "How do you write &quot;Hello World&quot; in an alert box?",
         answerOne: "msgBox(&quot;Hello World&quot;)",
-        answerTwo: "alert(&quot;Hello World&quot;)",
+        correct: "alert(&quot;Hello World&quot;)",
         answerThree: "msg(&quot;Hello World&quot;)",
         answerFour: "alertBox(&quot;Hello World&quot;)",
-        correct: this.answerTwo
     }
 ];
 
