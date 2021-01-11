@@ -1,10 +1,10 @@
 var timer = document.querySelector("#timer");
 var title = document.querySelector("#quiztitle");
 var questionArea = document.querySelector("#questionArea");
-var answerList = document.getElementById("#answers");
+var answers = document.getElementById("answers");
 var submitBtn = document.querySelector("#submitBtn");
-var choice = [];
 
+var choice = [];
 var time = 10;
 var score = 0;
 var incorrectCount = 0;
@@ -88,10 +88,10 @@ function dispQuest(choice)    {
 
 //this will create the buttons and display the answers
         // //Create buttons for each answer
-    var answers = document.getElementById("answers");
+    
 
     
-    
+//This function creates a button for each answer.    
     function lisAns()   {
         for (var i = 1; i < 5; i++) {
             var answer = choice[Object.keys(choice)[i]];
@@ -100,31 +100,9 @@ function dispQuest(choice)    {
             entry.appendChild(btn);
             answers.appendChild(entry);
             btn.innerHTML = answer;
-            btn.className = "btn btn-sm bg-primary m-1 p-1";
+            btn.className = "btn btn-sm bg-primary m-2 p-1";
+            btn.id = "answer" + i;
         }
-
-        // console.log("This is from the lisAns function: " + JSON.stringify(choice));
-        // console.log("This is from the lisAns function: " + choice[Object.keys(choice)[4]]);
-
-        // var answer1 = choice[Object.keys(choice)[1]];
-        // console.log("This is answer 1: " + answer1);
-
-        // var entry = document.createElement("li");
-        // var btn = document.createElement("button");
-        
-
-        // entry.appendChild(btn);
-        // // entry.appendChild(document.createTextNode("This is my first node"));
-        // answers.appendChild(entry);
-        // btn.innerHTML = answer1;
-
-        // entry.appendChild(btn);
-        // entry.appendChild(document.createTextNode("This is my second node"));
-        // answers.appendChild(entry);
-        // answers.appendChild(entry);
-        // btn.innerHTML = choice.answerOne;
-        // btn.className = "btn btn-sm bg-primary";
-        // End Creating buttons for each answer
     }
 
 
@@ -132,7 +110,7 @@ function dispQuest(choice)    {
 function startQuiz()  {
     submitBtn.remove();
     title.remove();
-    // countdown();
+    countdown();
     ranQues(questionsArr);
     dispQuest(choice);
     lisAns();
