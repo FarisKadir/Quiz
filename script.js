@@ -54,23 +54,6 @@ var questionsArr = [
 ];
 
 
-//Timer
-function countdown()    {
-    // while (gameover === false)  {
-        setInterval(function()  {
-            console.log(time);
-            time--;
-            console.log(time);
-        }, 1000);
-
-        return time;
-        console.log(time);
-    // }
-};
-
-
-
-
 //Randomly chooses a question and puts the object into variables.
 function ranQues(arr)  {
     choice = arr[Math.floor(Math.random() * arr.length)];
@@ -112,10 +95,26 @@ function dispQuest(choice)    {
 function startQuiz()  {
     submitBtn.remove();
     title.remove();
-    // countdown();
     ranQues(questionsArr);
     dispQuest(choice);
     lisAns();
+
+    //Start Timer
+    setInterval(function()  {
+        // Find the distance between now and the count down date
+        var timeLeft = 60;
+            
+        // Time calculations for days, hours, minutes and seconds
+        
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML =  minutes + "m " + seconds + "s ";
+        console.log(seconds);
+    }, 1000);
+    //End of timer code
+    
 }
 
 
