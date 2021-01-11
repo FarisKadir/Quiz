@@ -5,7 +5,7 @@ var answers = document.getElementById("answers");
 var submitBtn = document.querySelector("#submitBtn");
 
 var choice = [];
-var time = 10;
+var time = 60;
 var score = 0;
 var incorrectCount = 0;
 var gameover = false;
@@ -33,12 +33,12 @@ var questionsArr = [
         answerTwo: "The &lt;body&gt; section",
         answerThree: "Both the &lt;head&gt; section and the &lt;body&gt; section are correct",
         answerFour: "The &lt;title&gt; section",
-        correct: this.answerThree
+        correct: this.answerTwo
     },
     {
         question: "What is the correct syntax for referring to an external script called &quot;xxx.js&quot;?",
         answerOne: "&lt;script src = &quot;xxx.js&quot;&gt;",
-        answerTwo: "&lt;script href = &quot;xxx.js&quot;&gt;;",
+        answerTwo: "&lt;script href = &quot;xxx.js&quot;&gt;",
         answerThree: "&lt;script name = &quot;xxx.js&quot;&gt;",
         answerFour: "&lt;link script = &quot;xxx.js&quot;&gt;",
         correct: this.answerOne
@@ -56,14 +56,16 @@ var questionsArr = [
 
 //Timer
 function countdown()    {
-    while (gameover === false)  {
+    // while (gameover === false)  {
         setInterval(function()  {
             console.log(time);
             time--;
-            timer.value = time;
             console.log(time);
         }, 1000);
-    }
+
+        return time;
+        console.log(time);
+    // }
 };
 
 
@@ -99,8 +101,8 @@ function dispQuest(choice)    {
             var btn = document.createElement("button");
             entry.appendChild(btn);
             answers.appendChild(entry);
-            btn.innerHTML = answer;
-            btn.className = "btn btn-sm bg-primary m-2 p-1";
+            btn.innerHTML = i + ". " + answer;
+            btn.className = "btn btn-primary m-2 p-1";
             btn.id = "answer" + i;
         }
     }
@@ -110,7 +112,7 @@ function dispQuest(choice)    {
 function startQuiz()  {
     submitBtn.remove();
     title.remove();
-    countdown();
+    // countdown();
     ranQues(questionsArr);
     dispQuest(choice);
     lisAns();
