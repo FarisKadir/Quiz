@@ -3,7 +3,6 @@ var title = document.querySelector("#quiztitle");
 var questionArea = document.querySelector("#questionArea");
 var answers = document.getElementById("answers");
 var submitBtn = document.querySelector("#submitBtn");
-var progress = "";
 
 //Answer buttons
 var button1 = document.querySelector("#btn1");
@@ -18,6 +17,7 @@ var score = 0;
 var incorrectCount = 0;
 var gameover = false;
 var questionCount = 0;
+
 var questionsArr = [
     {
         question: "What is DOM an abbreviation for?",
@@ -62,6 +62,7 @@ var questionsArr = [
 
 function assignQues(arr)    {
     console.log(arr);
+    //Need to figure out how to remove existing buttons or not use append to create the buttons.
     //Randomly choose an object from an array. The objects are the questions and answers.
     ranInt = Math.floor(Math.random() * arr.length)
     randoChoice = arr[ranInt];
@@ -94,13 +95,25 @@ function assignQues(arr)    {
 
 }
 
-function checkAns(clicked_id)   {
-
+//This function checks the ID of an on click even of a button and checks if the answer is right or wrong.
+function checkAns(btn_id)   {
+    questionsArr = questionsArr;
+    console.log(questionsArr);
+    console.log(btn_id);
+    if (btn_id === "correct")   {
+        score++
+        console.log(score);
+        timeLeft = timeLeft + 10;
+        document.querySelector(".result").innerHTML = "You got it correct!";
+        assignQues(questionsArr);
+    }
+    else    {
+        document.querySelector(".result").innerHTML = "You got Wrong!";
+        timeLeft = timeLeft - 10;
+        assignQues(questionsArr);
+    }
 }
 
-function reply_click(clicked_id)    {
-    alert(clicked_id);
-}
 
 function startQuiz()  {
     submitBtn.remove(); 
@@ -110,7 +123,6 @@ function startQuiz()  {
         if (timeLeft > 0)   {
             timeLeft--; 
             document.getElementById("timer").textContent = "Timer: " + timeLeft;
-            console.log("The time left on the clock is " + timeLeft);
         }
         else {
             questionArea.textContent = "Time's Up!";
