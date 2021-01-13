@@ -5,7 +5,7 @@ var answers = document.getElementById("answers");
 var submitBtn = document.querySelector("#submitBtn");
 
 var choice = [];
-var time = 60;
+var timeLeft = 5;
 var score = 0;
 var incorrectCount = 0;
 var gameover = false;
@@ -48,6 +48,11 @@ var questionsArr = [
     }
 ];
 
+//This is the function for the countdown timer
+
+
+
+
 
 //Randomly chooses a question and puts the object into variables.
 function ranQues(arr)  {
@@ -61,13 +66,10 @@ function dispQuest(choice)    {
     console.log("Question: " + choice.question + "\nAnswer1: " + choice.answerOne + "\nAnswer2: " + choice.answerTwo + "\nAnswer3: " + choice.answerThree + "\nAnswer4: " + choice.answerFour + "\nCorrect Answer: " + choice.correct);
     
     // //Display Question
-    questionArea.innerHTML = choice.question;
+    questionArea.innerText = choice.question;
     // //End Display Question
 }
 
-
-//this will create the buttons and display the answers
-        // //Create buttons for each answer
     
 
     
@@ -94,23 +96,16 @@ function startQuiz()  {
     dispQuest(choice);
     lisAns();
 
-    //Start Timer
+    //This is the countdown timer
     setInterval(function()  {
-        // Find the distance between now and the count down date
-        var timeLeft = 60;
-            
-        // Time calculations for days, hours, minutes and seconds
-        
-        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-        // Output the result in an element with id="demo"
-        document.getElementById("timer").innerHTML =  minutes + "m " + seconds + "s ";
-        console.log(seconds);
+        if (timeLeft > 0)   {
+            timeLeft--; 
+            document.getElementById("timer").textContent = "Timer: " + timeLeft;
+            console.log("The time left on the clock is " + timeLeft);
+        }
     }, 1000);
-    //End of timer code
-    
 }
+
 
 
 
