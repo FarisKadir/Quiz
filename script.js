@@ -4,10 +4,13 @@ var questionArea = document.querySelector("#questionArea");
 var answers = document.getElementById("answers");
 var submitBtn = document.querySelector("#submitBtn");
 var progress = "";
-var button1 = document.querySelector("button1");
-var button2 = document.querySelector("button2");
-var button3 = document.querySelector("button3");
-var button4 = document.querySelector("button4");
+
+//Answer buttons
+var button1 = document.querySelector("#btn1");
+var button2 = document.querySelector("#btn2");
+var button3 = document.querySelector("#btn3");
+var button4 = document.querySelector("#btn4");
+
 
 
 var timeLeft = 60;
@@ -18,10 +21,10 @@ var questionCount = 0;
 var questionsArr = [
     {
         question: "What is DOM an abbreviation for?",
-        answerOne: "Do Over Mondays",
-        answerTwo: "Old Dominion Freight Line",
+        wrongOne: "Do Over Mondays",
+        wrongTwo: "Old Dominion Freight Line",
         correct: "Document Object Model",
-        answerFour: "All of the above",
+        wrongFour: "All of the above",
     },
     {
         question: "Inside which HTML element do we put the JavaScript file name?",
@@ -55,20 +58,18 @@ var questionsArr = [
 
 
 
-//Timer
-
-    
-
 //Randomly selects a question from the array and displays the questions and answers on the screen. It will remove the question from the array once it's displayed so that the same question doesn't get picked again.
 
 function assignQues(arr)    {
+    console.log(arr);
     //Randomly choose an object from an array. The objects are the questions and answers.
-    randoChoice = arr[Math.floor(Math.random() * arr.length + 1)];
+    ranInt = Math.floor(Math.random() * arr.length)
+    randoChoice = arr[ranInt];
 
     //Display Question
     questionArea.innerText = randoChoice.question;
-    //End Display Question
-
+    
+    //Creates buttons for each answer
     for (var i = 1; i < 5; i++) {
         var idx = i;
         var key = Object.keys(randoChoice)[idx];
@@ -82,11 +83,24 @@ function assignQues(arr)    {
         entry.appendChild(btn);
         answers.appendChild(entry);
         btn.innerHTML = i + ". " + answer;
-        btn.className = "btn btn-primary m-2 p-1";
+        btn.className = "btn btn-primary m-2 p-1 " + "btn" + i;
+        btn.setAttribute("onClick","checkAns(this.id)");
         btn.id = btnID;
     }
+
+    //Removes the question from the array
+    arr.splice(ranInt, 1);
+    console.log(arr);
+
 }
 
+function checkAns(clicked_id)   {
+
+}
+
+function reply_click(clicked_id)    {
+    alert(clicked_id);
+}
 
 function startQuiz()  {
     submitBtn.remove(); 
@@ -105,6 +119,8 @@ function startQuiz()  {
     }, 1000);
 
     assignQues(questionsArr);
+   
+
     
 }
 
@@ -112,12 +128,8 @@ function startQuiz()  {
 
 
 
-
-
-
-
-
 submitBtn.addEventListener("click",startQuiz);
+
 
 
 
